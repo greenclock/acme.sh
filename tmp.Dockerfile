@@ -30,7 +30,7 @@ RUN ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh && crontab -l | grep acm
 
 #Install extra DNS API - Non Standard format
 
-#Zoneedit Script
+#Zoneedit Scri
 COPY ./dnsapi/dns_zoneedit.sh /root/.acme.sh/dnsapi/dns_zoneedit.sh
 
 

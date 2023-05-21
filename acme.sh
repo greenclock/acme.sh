@@ -4784,8 +4784,8 @@ $_authorizations_map"
           txtdomain="_acme-challenge.$_dns_root_d"
           dns_entry="${_dns_root_d}${dvsep}_acme-challenge.$_dns_root_d$dvsep$dvsep$_currentRoot"
         fi
-
         _debug txtdomain "$txtdomain"
+
         txt="$(printf "%s" "$keyauthorization" | _digest "sha256" | _url_replace)"
         _debug txt "$txt"
 
@@ -4820,7 +4820,7 @@ $_authorizations_map"
             _err "It seems that your api file is not correct, it must have a function named: $addcommand"
             return 1
           fi
-          _info "Adding txt value: $txt for domain:  $txtdomain"
+          _debug "Adding txt value: $txt for domain:  $txtdomain"
           if ! $addcommand "$txtdomain" "$txt"; then
             _err "Error add txt for domain:$txtdomain"
             return 1

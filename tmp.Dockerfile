@@ -28,11 +28,11 @@ RUN cd /install_acme.sh && ([ -f /install_acme.sh/acme.sh ] && /install_acme.sh/
 
 RUN ln -s /root/.acme.sh/acme.sh /usr/local/bin/acme.sh && crontab -l | grep acme.sh | sed 's#> /dev/null#> /proc/1/fd/1 2>/proc/1/fd/2#' | crontab -
 
-#Install extra DNS API - Non Standard format
+##Install extra DNS API - Non Standard format
 
-#Zoneedit Scri
+#Zoneedit Script
 COPY ./dnsapi/dns_zoneedit.sh /root/.acme.sh/dnsapi/dns_zoneedit.sh
-
+#
 
 RUN for verb in help \
   version \
